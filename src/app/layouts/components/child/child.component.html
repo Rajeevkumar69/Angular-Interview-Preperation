@@ -1,0 +1,10 @@
+<p>Child works!</p>
+
+<ng-container *ngIf="parentData; else showButton">
+     <p class="text-primary">Data from Parent: {{ parentData }}</p>
+</ng-container>
+
+<ng-template #showButton>
+     <p>Send data from Child to Parent:</p>
+     <button type="button" class="btn btn-sm btn-primary" (click)="sendData()">Send Data</button>
+</ng-template>

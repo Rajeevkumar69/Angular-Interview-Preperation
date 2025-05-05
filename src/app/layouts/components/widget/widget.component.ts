@@ -1,4 +1,14 @@
-import { AfterViewInit, Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import {
+     AfterViewInit,
+     Component,
+     EventEmitter,
+     Input,
+     OnChanges,
+     OnDestroy,
+     OnInit,
+     Output,
+     SimpleChanges
+} from '@angular/core';
 
 @Component({
      selector: 'app-widget',
@@ -7,6 +17,9 @@ import { AfterViewInit, Component, Input, OnChanges, OnDestroy, OnInit, SimpleCh
 })
 export class WidgetComponent implements OnInit, OnDestroy, AfterViewInit, OnChanges {
      @Input() public data: any;
+     @Input() public userDataComponentData: string | null = null;
+     @Output() public messageEvent = new EventEmitter<any>();
+
      public intervalId: any;
 
      ngOnInit() {
@@ -15,7 +28,7 @@ export class WidgetComponent implements OnInit, OnDestroy, AfterViewInit, OnChan
 
      ngOnChanges(changes: SimpleChanges) {
           if (changes['data']) {
-
+               // Handle new data if needed
           }
      }
 
@@ -23,13 +36,11 @@ export class WidgetComponent implements OnInit, OnDestroy, AfterViewInit, OnChan
           clearInterval(this.intervalId);
      }
 
+     ngAfterViewInit(): void { }
+
      startPolling() {
           this.intervalId = setInterval(() => {
+
           }, 1000);
      }
-
-     ngAfterViewInit(): void {
-
-     }
-
 }

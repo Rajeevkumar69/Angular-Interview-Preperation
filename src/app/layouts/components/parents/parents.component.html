@@ -1,0 +1,7 @@
+<p>parents works!</p>
+
+<app-child [parentData]="'Hello from Parent component'"></app-child>
+
+<app-child (outputData)="getMessageFromChild($event)"></app-child>
+<p> {{childData?.name}} </p>
+<p> {{childData?.age}} </p>

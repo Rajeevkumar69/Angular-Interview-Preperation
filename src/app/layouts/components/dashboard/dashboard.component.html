@@ -18,6 +18,24 @@
                </div>
           </div>
 
+          <div class="col-12 col-md-4" [routerLink]="'parent'">
+               <div class="bg-success text-white p-4 rounded-3 shadow-sm">
+                    <p class="h6 mb-2">
+                         <i class="fa-solid fa-user-tie me-2"></i> Parent Component
+                    </p>
+                    <h2 class="display-6 mb-0">{{ userFormCount }}</h2>
+               </div>
+          </div>
+
+          <div class="col-12 col-md-4" [routerLink]="'child'">
+               <div class="bg-success text-white p-4 rounded-3 shadow-sm">
+                    <p class="h6 mb-2">
+                         <i class="fa-solid fa-user-tie me-2"></i> Child Component
+                    </p>
+                    <h2 class="display-6 mb-0">{{ userDataCount }}</h2>
+               </div>
+          </div>
+
           <div class="col-12 col-md-4" [routerLink]="'user/form'">
                <div class="bg-warning text-white p-4 rounded-3 shadow-sm">
                     <p class="h6 mb-2">

@@ -17,6 +17,8 @@ import { PopupsModule } from './popups/popups.module';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { HilightsDirective } from '../shared/directives/hilights.directive';
 import { WidgetComponent } from './components/widget/widget.component';
+import { ParentsComponent } from './components/parents/parents.component';
+import { ChildComponent } from './components/child/child.component';
 
 
 
@@ -27,7 +29,9 @@ import { WidgetComponent } from './components/widget/widget.component';
           UserFormComponent,
           DashboardComponent,
           HilightsDirective,
-          WidgetComponent
+          WidgetComponent,
+          ParentsComponent,
+          ChildComponent
      ],
      imports: [
           CommonModule,
@@ -44,7 +48,9 @@ import { WidgetComponent } from './components/widget/widget.component';
           MatDialogModule
      ],
      exports: [
-          WidgetComponent
+          WidgetComponent,
+          ParentsComponent,
+          ChildComponent
      ],
      providers: [
           {

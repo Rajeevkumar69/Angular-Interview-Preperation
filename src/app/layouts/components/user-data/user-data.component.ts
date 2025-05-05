@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, Output, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { PeriodicElement } from 'src/app/shared/interfaces/common.interface';
@@ -17,6 +17,7 @@ export class UserDataComponent implements OnInit, AfterViewInit {
      displayedColumns: string[] = ['id', 'name', 'username', 'email', 'menu'];
      public widgetOptions = ['Weather', 'News', 'Stock'];
      public selectedWidgetData: any = null;
+
 
      @ViewChild(MatPaginator) paginator!: MatPaginator;
 
