@@ -1,8 +1,22 @@
 <div class="container-fluid py-4 px-3">
-     <div class="row">
-          <div class="col-12 col-md-12">
-               <h3> <i class="fa-solid fa-arrow-left-long cursor-pointer" (click)="goToBack()"></i> User
-                    Data</h3>
+     <div class="row align-items-center mb-4">
+          <div class="col-12 col-md-6 d-flex align-items-center gap-2">
+               <i class="fa-solid fa-arrow-left-long cursor-pointer" (click)="goToBack()"></i>
+               <h3 class="mb-0">User Data</h3>
+          </div>
+
+          <div class="col-12 col-md-6">
+               <div
+                    class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-end gap-3">
+                    <div>
+                         <label for="widgetSelect" class="form-label mb-1 fw-semibold">Widget Component</label>
+                         <select id="widgetSelect" class="form-select" (change)="selectWidget($event)">
+                              <option *ngFor="let item of widgetOptions" [value]="item">{{ item }}</option>
+                         </select>
+                    </div>
+
+                    <app-widget [data]="selectedWidgetData"></app-widget>
+               </div>
           </div>
      </div>
      <div class="row">

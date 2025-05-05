@@ -16,6 +16,7 @@ import * as echarts from 'echarts';
 import { PopupsModule } from './popups/popups.module';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { HilightsDirective } from '../shared/directives/hilights.directive';
+import { WidgetComponent } from './components/widget/widget.component';
 
 
 
@@ -25,7 +26,8 @@ import { HilightsDirective } from '../shared/directives/hilights.directive';
           UserDataComponent,
           UserFormComponent,
           DashboardComponent,
-          HilightsDirective
+          HilightsDirective,
+          WidgetComponent
      ],
      imports: [
           CommonModule,
@@ -40,6 +42,9 @@ import { HilightsDirective } from '../shared/directives/hilights.directive';
           MatMenuModule,
           PopupsModule,
           MatDialogModule
+     ],
+     exports: [
+          WidgetComponent
      ],
      providers: [
           {

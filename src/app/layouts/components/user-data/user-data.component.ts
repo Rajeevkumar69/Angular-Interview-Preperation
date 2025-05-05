@@ -15,6 +15,8 @@ import { UserDataDetailsComponent } from '../../popups/user-data-details/user-da
 export class UserDataComponent implements OnInit, AfterViewInit {
      public userData = new MatTableDataSource<PeriodicElement>();
      displayedColumns: string[] = ['id', 'name', 'username', 'email', 'menu'];
+     public widgetOptions = ['Weather', 'News', 'Stock'];
+     public selectedWidgetData: any = null;
 
      @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -62,6 +64,14 @@ export class UserDataComponent implements OnInit, AfterViewInit {
                .subscribe((response) => {
                     this.getUserData();
                });
+     }
+
+     public selectWidget(event: Event) {
+          const target = event.target as HTMLSelectElement;
+          const name = target.value;
+          const date = new Date();
+          const formattedDate = new Intl.DateTimeFormat('en-US').format(date);
+          this.selectedWidgetData = { name, time: formattedDate };
      }
 
 
