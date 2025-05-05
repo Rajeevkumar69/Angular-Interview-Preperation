@@ -1,0 +1,93 @@
+<div class="container-fluid d-flex flex-column" style="max-height: 100vh; height: 92vh">
+     <div class="row flex-shrink-0">
+          <div class="col-12 d-flex justify-content-between align-items-center border-bottom py-3 px-3 mb-3">
+               <h4 class="fs-5 fw-medium m-0">
+                    View {{dialougeDetails.name}} Details
+               </h4>
+
+               <div class="d-flex align-items-center gap-3">
+                    <button mat-dialog-close class="btn btn-sm" (click)="closeDialoge()">
+                         <i class="fas fa-times"></i>
+                    </button>
+               </div>
+          </div>
+     </div>
+
+     <div class="row">
+          <div class="col-12 col-md-12">
+               <div class="input-group mb-1 px-3">
+                    <span class="input-group-text" id="search"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    <input type="text" class="form-control" placeholder="Search" aria-label="Search"
+                         aria-describedby="search" />
+               </div>
+          </div>
+     </div>
+
+     <div class="row flex-grow-1 overflow-auto">
+          <div class="col-12 px-4 py-4 d-flex flex-column h-100 bg-light rounded shadow-sm">
+               <div class="row mb-3">
+                    <div class="col-12 col-md-3 mb-2">
+                         <p class="mb-1 fw-semibold text-primary">User ID</p>
+                         <p class="mb-0 text-muted small">{{ dialougeDetails.id }}</p>
+                    </div>
+                    <div class="col-12 col-md-3 mb-2">
+                         <p class="mb-1 fw-semibold text-primary">User Name</p>
+                         <p class="mb-0 text-muted small">{{ dialougeDetails.name }}</p>
+                    </div>
+                    <div class="col-12 col-md-3 mb-2">
+                         <p class="mb-1 fw-semibold text-primary">User Unique Name</p>
+                         <p class="mb-0 text-muted small">{{ dialougeDetails.username }}</p>
+                    </div>
+                    <div class="col-12 col-md-3 mb-2">
+                         <p class="mb-1 fw-semibold text-primary">User Email</p>
+                         <p class="mb-0 text-muted small">{{ dialougeDetails.email }}</p>
+                    </div>
+               </div>
+
+               <div class="row mb-3">
+                    <div class="col-12 col-md-3 mb-2">
+                         <p class="mb-1 fw-semibold text-primary">Address No.1</p>
+                         <p class="mb-0 text-muted small">{{ dialougeDetails?.address.street }}</p>
+                    </div>
+                    <div class="col-12 col-md-3 mb-2">
+                         <p class="mb-1 fw-semibold text-primary">Address No.2</p>
+                         <p class="mb-0 text-muted small">{{ dialougeDetails?.address.suite }}</p>
+                    </div>
+                    <div class="col-12 col-md-3 mb-2">
+                         <p class="mb-1 fw-semibold text-primary">City</p>
+                         <p class="mb-0 text-muted small">{{ dialougeDetails?.address.city }}</p>
+                    </div>
+                    <div class="col-12 col-md-3 mb-2">
+                         <p class="mb-1 fw-semibold text-primary">ZIP Code</p>
+                         <p class="mb-0 text-muted small">{{ dialougeDetails?.address.zipcode }}</p>
+                    </div>
+               </div>
+
+               <div class="row">
+                    <div class="col-12 col-md-3 mb-2">
+                         <p class="mb-1 fw-semibold text-primary">Phone Number</p>
+                         <p class="mb-0 text-muted small">{{ dialougeDetails?.phone }}</p>
+                    </div>
+                    <div class="col-12 col-md-3 mb-2">
+                         <p class="mb-1 fw-semibold text-primary">Website URL</p>
+                         <p class="mb-0 text-muted small">{{ dialougeDetails?.website }}</p>
+                    </div>
+                    <div class="col-12 col-md-3 mb-2">
+                         <p class="mb-1 fw-semibold text-primary">Company Name</p>
+                         <p class="mb-0 text-muted small">{{ dialougeDetails?.company.name }}</p>
+                    </div>
+                    <div class="col-12 col-md-3 mb-2">
+                         <p class="mb-1 fw-semibold text-primary">Company Details</p>
+                         <p class="mb-0 text-muted small">{{ dialougeDetails?.company.catchPhrase }}</p>
+                    </div>
+               </div>
+          </div>
+
+     </div>
+
+     <div class="row flex-shrink-0">
+          <div class="col-12 border-top px-3 py-1 d-flex justify-content-end gap-2 min-h-50">
+               <button mat-button class="small-mat-button w-25 " (click)="closeDialoge()">Cancel</button>
+          </div>
+     </div>
+</div>

@@ -1,0 +1,55 @@
+<div class="container-fluid py-3 px-3 ">
+     <div class="row">
+          <div class="col-12 col-md-12">
+               <form [formGroup]="userForm" (submit)="submitForm()">
+                    <div class="mb-3">
+                         <label class="form-label required  ">First Name</label>
+                         <input type="text" formControlName="firstName" class="form-control"
+                              placeholder="Enter First Name">
+                         <ng-container *ngIf="userForm.get('firstName')?.invalid">
+                              <span class="form-error"> Invalid Form </span>
+                         </ng-container>
+
+                    </div>
+
+                    <div class="mb-3">
+                         <label class="form-label required">Last Name</label>
+                         <input type="text" formControlName="lastName" class="form-control"
+                              placeholder="Enter Last Name">
+                         <ng-container *ngIf="userForm.get('lastName')?.invalid">
+                              <span class="form-error"> Invalid Form </span>
+                         </ng-container>
+                    </div>
+
+                    <div class="mb-3">
+                         <label class="form-label required">Address</label>
+                         <textarea type="text" formControlName="address" class="form-control"
+                              placeholder="Enter Address"></textarea>
+                         <ng-container *ngIf="userForm.get('address')?.invalid">
+                              <span class="form-error"> Invalid Form </span>
+                         </ng-container>
+                    </div>
+
+                    <div class="mb-3">
+                         <label class="form-label required">Phone Number</label>
+                         <input type="text" formControlName="phoneNumber" class="form-control"
+                              placeholder="Enter Phone Number">
+                         <ng-container *ngIf="userForm.get('phoneNumber')?.invalid">
+                              <span class="form-error"> Invalid Form </span>
+                         </ng-container>
+                    </div>
+
+                    <div class="mb-3">
+                         <label class="form-label required">DOB</label>
+                         <input type="date" formControlName="DOB" class="form-control" placeholder="Enter D.O.B.">
+                         <ng-container *ngIf="userForm.get('DOB')?.invalid">
+                              <span class="form-error"> Invalid Form </span>
+                         </ng-container>
+                    </div>
+
+                    <button type="sumbit" mat-button [disabled]="userForm.invalid" (click)="submitForm()"
+                         class="common-mat-button">Save</button>
+               </form>
+          </div>
+     </div>
+</div>
