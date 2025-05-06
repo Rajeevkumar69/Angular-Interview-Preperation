@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/shared/services/data.service';
 
 @Component({
      selector: 'app-parents',
@@ -8,11 +9,28 @@ import { Component, OnInit } from '@angular/core';
 export class ParentsComponent implements OnInit {
      public childData: any;
 
-     constructor() { }
+     constructor(
+          private _dataService: DataService
+     ) { }
 
-     ngOnInit(): void { }
+     ngOnInit(): void {
+          this.fetchAPIData();
+     }
 
      public getMessageFromChild(data: any) {
           this.childData = data;
+     }
+
+     public fetchAPIData() {
+          this._dataService.getData().subscribe({
+               next: ((res) => {
+                    // console.log(res);
+
+               }),
+               error: ((error) => {
+                    // console.log(error);
+
+               })
+          })
      }
 }
